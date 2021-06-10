@@ -1,19 +1,45 @@
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	--nano: #4A90E2;
+	--body: hsl(217, 35%, 20%);
+	--content: hsl(193, 50%, 20%);
+	--border: hsl(187, 60%, 20%);
+	--text: hsl(181, 30%, 50%);
+	--text-light: hsl(181, 76%, 89%);
+	--text-dark: hsl(181, 30%, 40%);
+	--text-heading: var(--nano);
+	--shadow: 0px 2px 1px rgba(0, 0, 0, .1),
+						0 4px 2px rgba(0, 0, 0, .1),
+						0 8px 4px rgba(0, 0, 0, 0.1),
+						0 16px 8px rgba(0, 0, 0, 0.1),
+						0 32px 16px rgba(0, 0, 0, 0.1);
+	--shadow-big: 0 3px 2px rgba(0, 0, 0, .1),
+								0 10px 5px rgba(0, 0, 0, .1),
+								0 15px 10px rgba(0, 0, 0, .1),
+								0 25px 15px rgba(0, 0, 0, .2),
+								0 40px 30px rgba(0, 0, 0, .2),
+								0 100px 75px rgba(0, 0, 0, .3);
+}
+
 html, body {
 	position: relative;
 	width: 100%;
-	height: 100%;
 }
 
 body {
-	color: #333;
 	margin: 0;
-	padding: 8px;
-	box-sizing: border-box;
+	padding: 0 0 10rem;
+	overflow-x: hidden;
+	background: var(--body);
+	color: var(--text);
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 a {
-	color: rgb(0,100,200);
+	color: var(--text-heading);
 	text-decoration: none;
 }
 
@@ -21,8 +47,31 @@ a:hover {
 	text-decoration: underline;
 }
 
-a:visited {
-	color: rgb(0,80,160);
+h1,
+h2,
+h3,
+h4 {
+	font-weight: 100;
+	color: var(--text-light);
+	text-shadow: var(--shadow);
+}
+
+h1 {
+	font-size: clamp(3rem, 10vw, 5rem);
+}
+
+h2 {
+	font-size: clamp(2rem, 5vw, 2.25rem);
+	margin: 2rem 0;
+}
+
+h3 {
+	font-size: 1.5rem;
+	margin: 1.5rem 0;
+}
+
+strong {
+	font-weight: 600;
 }
 
 label {
@@ -60,4 +109,16 @@ button:not(:disabled):active {
 
 button:focus {
 	border-color: #666;
+}
+
+.color-nano {
+	color: var(--nano) !important;
+}
+
+.color-light {
+	color: var(--text-light) !important;
+}
+
+.color-white {
+	color: white !important;
 }
